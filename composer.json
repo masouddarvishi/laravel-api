@@ -21,13 +21,13 @@
     },
     "autoload":{
         "psr-4":{
-            "Hooraweb\\Base\\":"src/"
+            "Hooraweb\\LaravelApi\\":"src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hooraweb\\Base\\BaseServiceProvider"
+                "Hooraweb\\LaravelApi\\BaseServiceProvider"
             ]
         }
     }

@@ -1,14 +1,17 @@
 <?php
 
-namespace Hooraweb\Base\Models;
+namespace Hooraweb\LaravelApi\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Hooraweb\LaravelApi\Http\Resources\UserCollection;
+use Hooraweb\LaravelApi\Http\Resources\UserResource;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +19,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -25,7 +30,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -37,8 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getMessage()
+    public static function resource($data)
     {
-        return 'Base Package : is message from base package';
+        return new UserResource($data);
+    }
+
+    public static function collection($data)
+    {
+        return new UserCollection($data);
     }
 }
