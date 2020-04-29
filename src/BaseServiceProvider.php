@@ -4,6 +4,8 @@ namespace Hooraweb\LaravelApi;
 
 use Hooraweb\LaravelApi\Models\Permission;
 use Hooraweb\LaravelApi\Models\Role;
+use Hooraweb\LaravelApi\Models\Tag;
+use Hooraweb\LaravelApi\Models\Taxonomy;
 use Hooraweb\LaravelApi\Models\User;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +37,8 @@ class BaseServiceProvider extends ServiceProvider
             $loader->alias('User', User::class);
             $loader->alias('Role', Role::class);
             $loader->alias('Permission', Permission::class);
+            $loader->alias('Tag', Tag::class);
+            $loader->alias('Taxonomy', Taxonomy::class);
         });
     }
 }
