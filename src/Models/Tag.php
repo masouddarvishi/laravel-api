@@ -2,6 +2,8 @@
 
 namespace Hooraweb\LaravelApi\Models;
 
+use Hooraweb\LaravelApi\Http\Resources\TagCollection;
+use Hooraweb\LaravelApi\Http\Resources\TagResource;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -47,5 +49,14 @@ class Tag extends Model
             ->saveSlugsTo('slug');
     }
 
+    public static function resource($data)
+    {
+        return new TagResource($data);
+    }
+
+    public static function collection($data)
+    {
+        return new TagCollection($data);
+    }
 
 }

@@ -2,13 +2,13 @@
 
 namespace Hooraweb\LaravelApi\Http\Requests\Role;
 
-use Hooraweb\LaravelApi\Models\Role;
+use Role;
 use User;
+use Permission;
 use Hooraweb\LaravelApi\Rules\AllExistRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use Spatie\Permission\Models\Permission;
 
 class RoleStoreRequest extends FormRequest
 {

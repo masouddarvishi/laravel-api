@@ -1,7 +1,7 @@
 <?php
-namespace App\Http\Requests\Taxonomy;
+namespace Hooraweb\LaravelApi\Http\Requests\Taxonomy;
 
-use App\Models\Taxonomy;
+use Taxonomy;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 

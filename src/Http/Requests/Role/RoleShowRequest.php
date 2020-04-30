@@ -2,7 +2,7 @@
 
 namespace Hooraweb\LaravelApi\Http\Requests\Role;
 
-use Hooraweb\LaravelApi\Models\Role;
+use Role;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;

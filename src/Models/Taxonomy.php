@@ -2,6 +2,8 @@
 
 namespace Hooraweb\LaravelApi\Models;
 
+use Hooraweb\LaravelApi\Http\Resources\TaxonomyCollection;
+use Hooraweb\LaravelApi\Http\Resources\TaxonomyResource;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Sluggable\HasSlug;
@@ -32,5 +34,15 @@ class Taxonomy extends Model
                 (!request()->filled('slug') && $this->slug === null) ? 'group_name' : 'slug'
             )
             ->saveSlugsTo('slug');
+    }
+
+    public static function resource($data)
+    {
+        return new TaxonomyResource($data);
+    }
+
+    public static function collection($data)
+    {
+        return new TaxonomyCollection($data);
     }
 }

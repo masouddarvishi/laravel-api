@@ -1,11 +1,10 @@
 <?php
 
-namespace Hooraweb\LaravelApi\Controllers;
+namespace Hooraweb\LaravelApi\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Hooraweb\LaravelApi\Http\Requests\Auth\LoginRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use User;
 class AuthController extends Controller

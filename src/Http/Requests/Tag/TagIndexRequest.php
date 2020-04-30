@@ -1,7 +1,7 @@
 <?php
 namespace Hooraweb\LaravelApi\Http\Requests\Tag;
 
-use Hooraweb\LaravelApi\Models\Tag;
+use Tag;
 use Illuminate\Foundation\Http\FormRequest;
 
 use Illuminate\Support\Facades\Auth;

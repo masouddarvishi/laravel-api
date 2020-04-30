@@ -4,7 +4,7 @@ namespace Hooraweb\LaravelApi\Http\Requests\User;
 use User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-use Spatie\Permission\Models\Role;
+
 
 class UserIndexRequest extends FormRequest {
 

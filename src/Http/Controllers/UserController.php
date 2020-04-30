@@ -1,12 +1,11 @@
 <?php
 
-namespace Hooraweb\LaravelApi\Controllers;
+namespace Hooraweb\LaravelApi\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Hooraweb\LaravelApi\Http\Requests\User\UserIndexRequest;
 use Hooraweb\LaravelApi\Http\Requests\User\UserShowRequest;
 use Hooraweb\LaravelApi\Http\Requests\User\UserStoreRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
 use User;
@@ -20,7 +19,7 @@ class UserController extends Controller
             ->allowedSorts(['name', 'mobile', 'id'])
             ->allowedIncludes(['roles']);
 
-        $result = request('per_page', false) ? $query->paginate(request('per_page')) : $query->get();
+        $result = $request->get('per_page', false) ? $query->paginate($request->per_page) : $query->get();
 
 
         return User::collection($result);
